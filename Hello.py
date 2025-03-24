@@ -1,3 +1,3 @@
-for i in range(10, 0    , -1):
-    print(i)
-    print("Hello World")
+x = '1.5'
+print(x)
+print(eval(x))

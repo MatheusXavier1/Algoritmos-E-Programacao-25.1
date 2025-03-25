@@ -22,7 +22,7 @@ def GeraRotacoes(numero):
     return rotacoesInt
 
 def VerificaPrimo(m):
-    flagPrimo = 1
+    flagPrimo = 0
     for l in range(m):
         if l > 0 and m % l == 0:
             print(f"{m} e divisivel por {l}")

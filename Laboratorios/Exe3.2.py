@@ -12,34 +12,53 @@
 # Input: "U2 é uma banda formada em 1976"
 
 # Output: 30 19 5 6 7
-output = []
-input = str(input())
-espaco, letras, numeros, palavras,simbolo = 0,0,0,0,0
-output.append(len(input.lstrip()))
 
-for i in range(len(input)):
-    if input[i].isalpha():
-        letras+=1
+output=[]
 
-output.append(letras)
+input = str(input("entre seu texto: "))
 
-for i in range(len(input)):
-    if input[i].isnumeric():
-        numeros+=1
+def QuantosCaracteres (input):
+	return (len(input))
 
-output.append(numeros)
+output.append(QuantosCaracteres(input))
 
-for i in range(len(input)):
-    if input[i].isspace():
-        espaco+=1
+def QuantasLetras(input):
+	letras = 0
+	for i in range(len(input)):
+		if input[i].isalpha():
+			letras += 1
+	return letras
 
-for i in range(len(input)):
-    if not input[i].isalnum():
-        simbolo+=1
+output.append(QuantasLetras(input))
 
-output.append(simbolo)
+def QuantosNumeros(input):
+	numeros = 0
+	for i in range(len(input)):
+		if input[i].isnumeric():
+			numeros += 1
+	return numeros
 
-palavras = espaco+1
-output.append(palavras)
+output.append(QuantosNumeros(input))
+
+def QuantosSimbolos(input):
+	simbolo = 0
+	for i in range(len(input)):
+		if not  input[i].isalnum():
+			simbolo += 1
+
+	return simbolo
+output.append(QuantosSimbolos(input))
+
+def QuantasPalavras (input):
+	numeroDePalavras = 1
+	for j in range(len(input)):
+
+		if input[j]== " ":
+			if input[j+1].isalnum():
+				numeroDePalavras +=  1
+	return numeroDePalavras
+
+
+output.append(QuantasPalavras(input))
 
 print(output)

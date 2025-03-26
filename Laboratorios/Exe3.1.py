@@ -11,15 +11,15 @@
 
 #  Output: False
 
-def SubSequencia(v1, v2):
-    flag = 0
-    for i in range(len(v1)):
-        for j in range(len(v2)):
-            if v1[i] == v2[j]:
-                flag+=1
-    return flag == len(v1)
 
-v1 = [5,6,4]
-v2 = [9,5,6,3,9,6,4,7]
 
-print(SubSequencia(v1,v2))
+v1 = [33,9,0]
+v2 = [1, 3, 5, 7, 'a', 'aba',33,'cachorro',9,'brazil lixo',0]
+
+flag = 0
+for elementos in v1:
+    for i in range(len(v2)):
+        if elementos == v2[i]:
+            ultimo = v2[i]
+            flag+=1
+print(len(v1) <= flag or len(v2) <= flag)

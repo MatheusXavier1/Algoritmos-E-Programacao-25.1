@@ -11,15 +11,16 @@
 
 #  Output: False
 
+v1 = eval(input())
+v2 = eval(input())
 
+j,flag  = 0,0
 
-v1 = [33,9,0]
-v2 = [1, 3, 5, 7, 'a', 'aba',33,'cachorro',9,'brazil lixo',0]
-
-flag = 0
-for elementos in v1:
-    for i in range(len(v2)):
-        if elementos == v2[i]:
-            ultimo = v2[i]
-            flag+=1
-print(len(v1) <= flag or len(v2) <= flag)
+for elemento in v1:
+	while j<len(v2):
+		#print(f"v1:{elemento}, v2:{v2[j]}")
+		if elemento == v2[j]:
+			flag+=1
+			break
+		j+=1
+print(flag == len(v1))

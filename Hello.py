@@ -1,3 +1,3 @@
-x = '1.5'
-print(x)
-print(eval(x))
+a = 2/1
+a%=1
+print(a)

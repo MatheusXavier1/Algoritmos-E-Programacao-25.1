@@ -13,22 +13,11 @@
 # Input: [1,1,1,1] [2,2,2,2] Output: 8
 # Obs: Faça duas leituras, uma para cada vetor
 
-def ProdutoInterno(vetor1, vetor2):
-    somaProdutoInterno = 0
-    for i in range(len(vetor1)):
-        somaProdutoInterno += vetor1[i] * vetor2[i]
-    return somaProdutoInterno
 
-v1 = []
-v2 = []
+v1 = eval(input())
+v2 = eval(input())
 
-sizeV1 = int(input())
-sizeV2 = int(input())
-
-for i in range(sizeV1):
-    v1.append(int(input()))
-    
-for j in range(sizeV2):
-    v2.append(int(input()))
-
-print(ProdutoInterno(v1,v2))
+pi = 0
+for i in range(len(v1)):
+	pi += v1[i] * v2[i]
+print(v1)

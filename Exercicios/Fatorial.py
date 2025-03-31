@@ -3,7 +3,7 @@ def fatorial(numero):
         return 1
     for x in range(numero):
         if x != 0:
-            numero *= x
+		 numero *= x
     return numero
     
 print(fatorial(6))

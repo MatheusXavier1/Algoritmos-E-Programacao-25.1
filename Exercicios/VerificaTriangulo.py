@@ -8,10 +8,9 @@ def VerificaTriangulo(tamanhoDosLados):
     else:
         return "escaleno"
     
-a = [10,20,10]
-b = [10,10,20]
-c = [10,20,30]
-
+a = eval(input())
+b = eval(input())
+c = eval(input())
 
 print(VerificaTriangulo(a))
 print(VerificaTriangulo(b))

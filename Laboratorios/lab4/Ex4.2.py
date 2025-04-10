@@ -8,15 +8,20 @@
 #obs: número de colunas e/ou número de linhas pode ser 1. 
 
 
-matrizA = [[1,2],[3,4]]
+matrizA = eval(input())
+matrizB = eval(input())
+
 def SomaDeMatrizes(matrizA, matrizB):
+
+	if len(matrizA) != len(matrizB): 
+		return "Erro!"
 
 	matrizC = []
 	for i in range(len(matrizA)):
 		matrizC.append([])
 
-	for  l in range(len(matrizA))
-		for c in range(len(matrizA[0]))
-
-			
-print(matrizC)
+	for  l in range(len(matrizA)):
+		for c in range(len(matrizA[0])):
+			matrizC[l].append((matrizA[l][c] + matrizB[l][c]))
+	return matrizC
+print(SomaDeMatrizes(matrizA,matrizB))

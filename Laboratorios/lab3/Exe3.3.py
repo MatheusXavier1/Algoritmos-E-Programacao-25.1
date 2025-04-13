@@ -7,7 +7,7 @@ def codec(operation,text,num):
 		for char in textList:
 			for e in range(len(alfa)):
 				if char == alfa[e]:
-					codificado.append(alfa[e+num])
+					codificado.append(alfa[(e+num)%27])
 		output = ''.join(codificado)
 		return output
 	else:
@@ -16,7 +16,7 @@ def codec(operation,text,num):
 		for char in textList:
 			for e in range(len(alfa)):
 				if char == alfa[e]:
-					decodificado.append(alfa[e-num])
+					decodificado.append(alfa[(e-num)%27])
 		output = ''.join(decodificado)
 		return output
 

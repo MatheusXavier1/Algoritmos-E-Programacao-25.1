@@ -10,14 +10,10 @@
 # Obs: os coeficientes da matriz são inteiros e o formato da matriz é igual ao da aula Lista II
 
 
-matriz = [
-    [2, 5, 3],
-    [1, -2, -1],
-    [3, 6, 2]
-]
+matriz = eval(input())
 
-
-
+n = len(matriz)
+print(n)
 def Matriz1X1(matriz):
     return matriz
 
@@ -40,5 +36,13 @@ def Matriz3X3(matriz):
               matriz[1][2]*matriz[2][1]*matriz[0][0]-
               matriz[2][2]*matriz[0][1]*matriz[1][0])
     return det3x3     
-
-print(Matriz3X3(matriz))
+    
+if n == 1:
+    print("oi1")
+    print(Matriz1X1(matriz))
+elif n == 2:
+    print("oi2")
+    print(Matriz2X2(matriz))
+else:
+    print("oi3")
+    print(Matriz3X3(matriz))

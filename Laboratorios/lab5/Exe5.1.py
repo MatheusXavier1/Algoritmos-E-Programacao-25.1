@@ -18,22 +18,36 @@
 
 # obs: Faça duas leituras, uma para cada matriz
 
-# Matriz A: 2x3
+
 A = [
     [1, 2, 3],
     [4, 5, 6]
 ]
 
-# Matriz B: 2x2
+# Matriz B: 3 linhas × 4 colunas
 B = [
-    [7, 8],
-    [9, 10]
+    [7, 8, 9, 10],
+    [11, 12, 13, 14],
 ]
 
+def MultiplicacaoDeMatrizes(matrizA, matrizB):
+    linhasA = len(matrizA)
+    colunasA = len(matrizA[0])
+    linhasB = len(matrizB)
+    colunasB = len(matrizB[0])
 
-def MultiplicacaoDeMatrizes(matriz1, matriz2):
-    if len(matriz1[0]) != len(matriz2):
-        return False
-    else:
-        return True
-print(MultiplicacaoDeMatrizes(A,B))
+    if colunasA != linhasB:
+        return ValueError("Matriz Invalida")
+
+    resultado = [[0 for _ in range(colunasB)] for _ in range(linhasA)]
+
+    for i in range(linhasA):
+        for j in range(colunasB):
+            for k in range(colunasA):
+                print(A[i][k], "*", B[k][j])
+                resultado[i][j] += A[i][k] * B[k][j]
+
+    return resultado
+
+print(MultiplicacaoDeMatrizes(A,B),)    
+

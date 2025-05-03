@@ -1,3 +1,4 @@
+
 # Ler duas matrizes (todos os elementos são inteiros)
 
 # Faça uma função que retornar a multiplicação dessas duas matrizes.
@@ -32,8 +33,19 @@ B = [
 
 
 def MultiplicacaoDeMatrizes(matriz1, matriz2):
-    if len(matriz1[0]) != len(matriz2):
-        return False
-    else:
-        return True
-print(MultiplicacaoDeMatrizes(A,B))
+	 if len(matriz1[0]) != len(matriz2):
+		return False
+
+	saida = []
+
+	for i in range(matriz1[0]):
+		saida.append([])
+
+	while len(saida) != len(matriz1) and len(saida[0] != len(matriz2[0]):
+		mult  = 0
+		for l in range(len(matriz1)):
+			for c in range(len(matriz[0]):
+				mult = matriz1[l][c]*matriz2[c][l]
+
+print(MultiplicacaoDeMatriz(A,B)
+

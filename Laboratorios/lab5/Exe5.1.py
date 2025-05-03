@@ -19,16 +19,8 @@
 # obs: Faça duas leituras, uma para cada matriz
 
 
-A = [
-    [1, 2, 3],
-    [4, 5, 6]
-]
-
-# Matriz B: 3 linhas × 4 colunas
-B = [
-    [7, 8, 9, 10],
-    [11, 12, 13, 14],
-]
+A = eval(input())
+B = eval(input())
 
 def MultiplicacaoDeMatrizes(matrizA, matrizB):
     linhasA = len(matrizA)

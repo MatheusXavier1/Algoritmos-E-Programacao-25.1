@@ -2,51 +2,53 @@
 
 #Dizemos que uma matriz quadrada de inteiros é um quadrado mágico se a soma dos elementos
 # de cada linha, a soma dos elementos de cada coluna e a soma dos elementos das diagonais principal e secundária são todas iguais.
-[[8,1,6],
- [3,5,7],
- [4,2,9]]
 
 a = eval(input())
 
-
-def VerificaLinhas(matriz):
-	somaDeLinhas,a = 0,0
+def VerificaQuadradoMagico(matriz):
+	valoresLinhas = []
 	flag = 0
-	for j in  range(len(matriz)):
-		for l in range(len(matriz[0])):
-			if flag == 0:
-				a += matriz[j][l]
-			somaDeLinhas += matriz[j][l]
-		flag+=1
-	somaLinhaUnica = somaDeLinhas//len(matriz)
-
-	return somaLinhaUnica == a
-
-def VerificaColunas(matriz):
-	a,flag,somaDeColunas,somaColunaUnica = 0,0,0,0
-	for j in range(len(matriz)):
-		for l in range(len(matriz[0])):
-			if flag == 0:
-				a+=matriz[l][j]
-			somaDeColunas += matriz[l][j]
-		flag+=1
-	somaColunaUnica = somaDeColunas//len(matriz)
-
-	return somaColunaUnica == a
-
-def VerificaDiagonais(matriz):
-	diagonalPrincipal,diagonalSecundaria = 0,0
 	for l in range(len(matriz)):
-		for j in range(len(matriz[0])):
-			if l==j:
-				diagonalPrincipal += matriz[l][j]
-	
+		somaLinhas = 0
+		for c in range(len(matriz[0])):
+			somaLinhas+= matriz[l][c]
+		valoresLinhas.append(somaLinhas)
+
+	valoresLinhas.sort()
+	delta1 = valoresLinhas[-1] - valoresLinhas[0]
+
+	if delta1 == 0:
+		flag+=1
+
+	valoresColunas = []
 	for l in range(len(matriz)):
-		j = len(matriz[0])
-		while j != 0:
-			j-=1
-			diagonalSecundaria += matriz[l][j]
+		somaColunas = 0
+		for c in range(len(matriz[0])):
+			somaColunas+=matriz[c][l]
+		valoresColunas.append(somaColunas)
+	valoresColunas.sort()
+	delta2 = valoresColunas[-1] - valoresColunas[0]
+
+	if delta2 == 0:
+		flag+=1
+
+	valoresDiag = []
+	for l in range(len(matriz)):
+		for c in range(len(matriz[0])):
+			if l==c:
+				valoresDiag.append(matriz[l][c])
+	for l in range(len(matriz)):
+		c = len(matriz[0])-1
+		while c >= 0:
+			valoresDiag.append(matriz[l][c])
+			c-=1
 			break
+	valoresDiag.sort()
+	delta3 = valoresDiag[-1]-valoresDiag[0]
+	if delta3 == 0:
+		flag+=1
 
-	return diagonalPrincipal == diagonalSecundaria
-print(VerificaColunas(a)==VerificaDiagonais(a)==VerificaLinhas(a))
+	if flag == 3:
+		return True
+	return False
+print(VerificaQuadradoMagico(a))

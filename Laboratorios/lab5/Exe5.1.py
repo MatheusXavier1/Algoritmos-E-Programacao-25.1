@@ -18,7 +18,6 @@
 
 # obs: Faça duas leituras, uma para cada matriz
 
-
 A = eval(input())
 B = eval(input())
 
@@ -41,5 +40,5 @@ def MultiplicacaoDeMatrizes(matrizA, matrizB):
 
     return resultado
 
-print(MultiplicacaoDeMatrizes(A,B),)    
+print(MultiplicacaoDeMatrizes(A,B))    
 

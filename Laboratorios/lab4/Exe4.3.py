@@ -49,7 +49,4 @@ def VerificaDiagonais(matriz):
 			break
 
 	return diagonalPrincipal == diagonalSecundaria
-print(VerificaColunas(a))
-print(VerificaDiagonais(a))
-print(VerificaLinhas(a))
 print(VerificaColunas(a)==VerificaDiagonais(a)==VerificaLinhas(a))
